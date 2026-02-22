@@ -1,4 +1,4 @@
 const fs = require("fs");
-let [a,b,c] = fs.readFileSync(0).toString().split("\n");
+let a = fs.readFileSync(0).toString().trim().split("\n");
 
-console.log(a,b,c.trim());
+console.log(a[0],a[1]);
