@@ -1,0 +1,5 @@
+const fs = require("fs")
+let a = fs.readFileSync(0).toString()
+a = Number(a)
+if(((a+1)%2===0&&a%3===0)||(a%2===0&&a%5===0)) console.log("true")
+else console.log("false")
