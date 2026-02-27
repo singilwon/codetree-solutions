@@ -12,7 +12,7 @@ if (a === 0) {
     }
 }
 else {
-    if (B >= 19) {
+    if (b >= 19) {
         console.log("WOMAN");
     }
     else {
