@@ -1,1 +1,4 @@
-for(let i =5 ;i<=17;i++) console.log(i)
+let answer = 5;
+
+for(let i =6 ;i<=17;i++) answer = answer + " " + i
+console.log(answer)
