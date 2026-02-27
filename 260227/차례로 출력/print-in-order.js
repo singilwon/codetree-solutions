@@ -1,0 +1,1 @@
+for(let i =5 ;i<=17;i++) console.log(i)
