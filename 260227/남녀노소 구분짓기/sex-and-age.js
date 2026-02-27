@@ -4,7 +4,7 @@ a = Number(a);
 b = Number(b);
 
 if (a === 0) {
-    if (b >= 19) {
+    if (b > 19) {
         console.log("MAN");
     }
     else {
@@ -12,7 +12,7 @@ if (a === 0) {
     }
 }
 else {
-    if (a >= 19) {
+    if (a > 19) {
         console.log("WOMAN");
     }
     else {
