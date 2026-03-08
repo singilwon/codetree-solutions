@@ -6,7 +6,7 @@ for(let i = 1 ; i <= input ; i++) {
     const arr = []
     for(let j = 1 ; j <= input ; j++) {
         if((j+1)%2===0) arr.push(i);
-        else arr.push(Math.abs((input+1)-i));
+        else arr.push((input+1)-i);
     }
     console.log(arr.join(""));
 } 
