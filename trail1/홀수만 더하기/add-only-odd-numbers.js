@@ -1,5 +1,5 @@
 const fs = require("fs");
-const arr = fs.readFileSync(0).toString().trim().split("\n").map(Number);
+const [N, ...arr] = fs.readFileSync(0).toString().trim().split("\n").map(Number);
 
 let hap = 0;
 
