@@ -1,3 +1,3 @@
 let a = 'c'
-a = T
+a = 'T'
 console.log(a)
