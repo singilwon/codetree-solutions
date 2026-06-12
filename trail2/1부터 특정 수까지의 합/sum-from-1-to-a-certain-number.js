@@ -5,7 +5,7 @@ const n = Number(input[0]);
 function Hap(n) {
     let answer = 0;
     for (let i = 1; i <= n; i++) answer += i;
-    console.log(Math.trunc(answer / 10));
+    return Math.trunc(answer / 10);
 }
 
-Hap(n);
+console.log(Hap(n));
