@@ -5,7 +5,7 @@ let [a, b, c] = input[0].split(" ").map(Number);
 
 function Min(a, b, c) {
     let min = 0;
-    a > b ? b > c ? min = c : min = b : a < c ? min = a : min = a;
+    a >= b ? b >= c ? min = c : min = b : a <= c ? min = a : min = 0;
     return min;
 }
 
