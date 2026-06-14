@@ -9,9 +9,8 @@ function YesOrNo(A, B) {
         let ten = parseInt(i / 10);
         let one = i % 10;
         if (i % 3 === 0) cnt++;
-        else if (ten === 3 || ten === 6 || ten === 9) cnt;
-        else if (one === 3 || one === 6 || one === 9) cnt;
-        console.log(ten, one);
+        else if (ten === 3 || ten === 6 || ten === 9) cnt++;
+        else if (one === 3 || one === 6 || one === 9) cnt++;
     }
     return cnt;
 
