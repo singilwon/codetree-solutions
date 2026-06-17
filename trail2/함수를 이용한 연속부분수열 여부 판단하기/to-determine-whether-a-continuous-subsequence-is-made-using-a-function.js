@@ -14,10 +14,11 @@ function subarray(n1, n2, a, b) {
                 if (a[i + up] === b[j]) isTrue = true;
                 else isTrue = false;
                 up++;
+                if (j === n2 - 1 && isTrue === true) return isTrue;
             }
+
         }
     }
-    return isTrue;
 }
 
 if (subarray(n1, n2, a, b)) console.log("Yes");
