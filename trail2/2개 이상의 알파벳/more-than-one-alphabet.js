@@ -1,15 +1,14 @@
 const fs = require("fs");
-const input = fs.readFileSync(0).toString().trim().split('\n');
-const A = input[0];
+const A = fs.readFileSync(0).toString().trim();
 
-function double(A) {
-
-    for (let i = 0; i < A.length; i++) {
-        for (let j = 0; j < A.length; j++) {
-            if (A[i] !== A[j]) return "Yes";
+function hasTwoOrMoreAlphabets(str) {
+    for (let i = 1; i < str.length; i++) {
+        if (str[i] !== str[0]) {
+            return "Yes";
         }
     }
+
     return "No";
 }
 
-console.log(double(A));
+console.log(hasTwoOrMoreAlphabets(A));
