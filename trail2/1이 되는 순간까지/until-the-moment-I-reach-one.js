@@ -12,7 +12,7 @@ function f(n) {
         return f(n / 2) + 1;
     }
     else {
-        return f(n / 3) + 1;
+        return f(Math.floor(n / 3)) + 1;
     }
 }
 
