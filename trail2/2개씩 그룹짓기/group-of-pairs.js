@@ -6,14 +6,11 @@ const nums = input[1].trim().split(' ').map(Number);
 
 nums.sort((a, b) => a - b);
 
-let min = Infinity;
+let answer = 0;
 
-for (let i = 0; i < (2 * n) - 1; i++) {
-    for (let j = 1; j < (2 * n) - 1; j++) {
-        if (i === j) continue;
-    }
-
-    
+for (let i = 0; i < n; i++) {
+    const sum = nums[i] + nums[2 * n - 1 - i];
+    answer = Math.max(answer, sum);
 }
 
-console.log(min);
+console.log(answer);
