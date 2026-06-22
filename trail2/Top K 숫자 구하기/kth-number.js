@@ -2,5 +2,5 @@ const fs = require("fs");
 const input = fs.readFileSync(0).toString().trim().split('\n');
 const [n, k] = input[0].split(' ').map(Number);
 const nums = input[1].trim().split(' ').map(Number);
-
-console.log(nums.sort()[k - 1]);
+nums.sort();
+console.log(nums[k - 1]);
