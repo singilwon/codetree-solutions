@@ -10,7 +10,7 @@ for (let i = 0; i < Number(n); i++) {
 const newArr = [];
 for (let i = 0; i < words.length; i++) {
     for (let j = 0; j < t.length; j++) {
-        if (words[i][j] !== t[j]) continue;
+        if (words[i][j] !== t[j]) break;
         if (j === t.length - 1) newArr.push(words[i]);
     }
 }
