@@ -5,13 +5,11 @@ const n = Number(input[0]);
 const personLines = input.slice(1, n + 1);
 
 for (let i = 0; i < n; i++) {
-    let temp = personLines.shift()
-    temp = temp.split(" ");
-    personLines.push(temp);
+    personLines[i] = personLines[i].split(" ");
 }
 
 
-personLines.sort((a, b) => a[0] > b[0]);
+personLines.sort((a, b) => a[0].localeCompare(b[0]));
 
 const [name, number, localtion] = personLines[n - 1]
 
