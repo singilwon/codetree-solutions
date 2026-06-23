@@ -4,9 +4,6 @@ const input = fs.readFileSync(0).toString().trim().split('\n');
 const n = Number(input[0]);
 const personLines = input.slice(1, n + 1);
 
-
-const [name, number, localtion] = personLines[n - 1].split(" ")
-
 for (let i = 0; i < n; i++) {
     let temp = personLines.shift()
     temp = temp.split(" ");
@@ -14,7 +11,9 @@ for (let i = 0; i < n; i++) {
 }
 
 
-personLines.sort((a, b) => a[0] < b[0]);
+personLines.sort((a, b) => a[0] > b[0]);
+
+const [name, number, localtion] = personLines[n - 1]
 
 class Person {
     constructor(name, number, localtion) {
