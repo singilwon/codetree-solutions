@@ -29,7 +29,7 @@ students.sort(cmpName);
 
 console.log("name");
 for (let i = 0; i < 5; i++) {
-    console.log(`${students[i].n} ${students[i].h} ${students[i].w}`);
+    console.log(`${students[i].n} ${students[i].h} ${students[i].w.toFixed(1)}`);
 }
 
 
@@ -37,5 +37,5 @@ students.sort(cmpHeight);
 
 console.log("\n" + "height");
 for (let i = 0; i < 5; i++) {
-    console.log(`${students[i].n} ${students[i].h} ${students[i].w}`);
+    console.log(`${students[i].n} ${students[i].h} ${students[i].w.toFixed(1)}`);
 }
