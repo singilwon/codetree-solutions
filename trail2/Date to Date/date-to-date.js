@@ -21,7 +21,8 @@ function cal(m, d) {
 let totalDay1 = cal(m1, d1);
 let totalDay2 = cal(m2, d2);
 
-console.log(totalDay2 - totalDay1);
+if (m1 === m2 && d1 === d2) console.log(1);
+else console.log(totalDay2 - totalDay1);
 
 
 
