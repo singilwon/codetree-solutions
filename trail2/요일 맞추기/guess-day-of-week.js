@@ -32,6 +32,6 @@ else {
         revIdx--;
         if (revIdx < 0) revIdx = 6;
     }
-    console.log(day_of_week[revIdx + 1]);
+    console.log(day_of_week[(revIdx + 1) % 7]);
 }
 
