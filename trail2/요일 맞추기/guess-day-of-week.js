@@ -19,6 +19,6 @@ function monthToday(m) {
 let day1 = monthToday(m1) + d1;
 let day2 = monthToday(m2) + d2;
 
-const gap = (day1 - day2) % 7;
+const gap = ((day1 - day2 - 1) % 7);
 
-console.log(day_of_week[gap - 1]);
+console.log(day_of_week[gap]);
