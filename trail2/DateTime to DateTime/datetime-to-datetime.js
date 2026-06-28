@@ -9,4 +9,5 @@ let day = A - 11;
 
 let answer = (day * 24 * 60) + min;
 
-console.log(answer);
+if (answer < 0) console.log(-1);
+else console.log(answer);
