@@ -7,9 +7,9 @@ const num_of_days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
 function cal(m, d) {
     let answer = 0;
-    let month = 0;
+    let month = 1;
     while (true) {
-        if (m - 1 === month) break;
+        if (m === month) break;
         answer += num_of_days[month];
         month++;
 
