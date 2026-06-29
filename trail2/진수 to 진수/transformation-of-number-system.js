@@ -27,11 +27,11 @@ function otherToTen(n) {
 
 if (a === 10) {
     const digitNums = tenToOther(n);
-    console.log(digitNums.join(""));
+    console.log(digitNums.reverse().join(""));
 
 } else {
     let newN = otherToTen(n);
     const digitNums = tenToOther(newN);
-    console.log(digitNums.join(""));
+    console.log(digitNums.reverse().join(""));
 }
 
