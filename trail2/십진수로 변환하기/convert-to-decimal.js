@@ -9,4 +9,5 @@ for (let i = 0; i < 5; i++) {
     num = num * 2 + binary[i];
 }
 
-console.log(num);
+if (binary[0] === 0) console.log(0);
+else console.log(num);
