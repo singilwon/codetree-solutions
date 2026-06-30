@@ -14,8 +14,8 @@ for (const command of commands) {
             visited[current]++;
             current++;
         } else {
-            visited[current]++;
             current--;
+            visited[current]++;
         }
     }
 }
@@ -25,4 +25,4 @@ for (const v of visited) {
     if (v >= 2) answer++;
 }
 
-console.log(answer - 2);
+console.log(answer);
