@@ -3,9 +3,9 @@ const input = fs.readFileSync(0).toString().trim().split('\n');
 
 const n = Number(input[0]);
 const commands = input.slice(1, n + 1);
-let current = 100;
+let current = 1000;
 
-const visited = Array(200).fill(0);
+const visited = Array(2000).fill(0);
 
 for (const command of commands) {
     const [len, dir] = command.split(" ");
@@ -25,4 +25,4 @@ for (const v of visited) {
     if (v >= 2) answer++;
 }
 
-console.log(answer);
+console.log(answer - 2);
