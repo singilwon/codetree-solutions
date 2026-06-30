@@ -7,16 +7,10 @@ for (let i = 1; i <= n; i++) {
     segments.push(input[i].split(' ').map(Number));
 }
 
-let last = 0;
-
-for (const [v1, v2] of segments) {
-    if (last < v2) last = v2;
-}
-
-const visited = Array(last).fill(0);
+const visited = Array(200).fill(0);
 
 for (const [start, end] of segments) {
-    for (let i = start; i < end; i++) {
+    for (let i = start + 100; i < end + 100; i++) {
         visited[i]++;
     }
 }
