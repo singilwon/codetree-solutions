@@ -13,12 +13,14 @@ for (const [len, dir] of commands) {
         if (dir === "R") {
             visited[current][0]++;
             visited[current][2] = "B";
+            if (i === Number(len) - 1) continue;
             current++;
-
         } else {
             visited[current][1]++;
             visited[current][2] = "W";
-            
+            if (i === Number(len) - 1) continue;
+            current--;
+
         }
     }
 }
