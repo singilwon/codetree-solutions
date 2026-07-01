@@ -4,13 +4,13 @@ const input = fs.readFileSync(0).toString().trim().split('\n');
 const n = Number(input[0]);
 const rects = input.slice(1, n + 1).map(line => line.split(' ').map(Number));
 
-const area = Array(10).fill(0).map(() => Array(10).fill(0));
+const area = Array(200).fill(0).map(() => Array(200).fill(0));
 
 for (let i = 0; i < n; i++) {
     for (let j = rects[i][0]; j < rects[i][2]; j++) {
 
         for (let k = rects[i][1]; k < rects[i][3]; k++) {
-            area[j][k] = 1;
+            area[j + 100][k + 100] = 1;
         }
     }
 }
