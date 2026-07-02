@@ -14,7 +14,7 @@ for (let i = 0; i < n; i++) {
         continue;
     }
     cnt++;
-    if (i === n - 1) max.push(cnt);
+    if(i===n-1) max.push(cnt);
 }
 
 console.log(Math.max(...max));
