@@ -39,7 +39,7 @@ for (let i = 0; i < shakes.length; i++) {
 
 let answer = "";
 for (const v of infections) {
-    answer += v[0];
+    answer += v[2];
 }
 
 console.log(answer);
