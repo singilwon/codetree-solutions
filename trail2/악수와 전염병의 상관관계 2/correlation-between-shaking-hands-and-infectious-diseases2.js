@@ -10,36 +10,38 @@ for (let i = 1; i <= t; i++) {
 
 shakes.sort((a, b) => a.time - b.time);
 
-const infections = Array(n).fill(0).map(() => Array(3).fill(0))
+const infections = Array(n).fill(0).map(() => Array(2).fill(0));
 
-infections[p - 1][2] = 1;
-infections[p - 1][1] = k;
-
+infections[p - 1][1] = 1;
+infections[p - 1][0] = k;
 
 for (let i = 0; i < shakes.length; i++) {
-    if (infections[shakes[i].person1 - 1][1] > 0) {
-        if (infections[shakes[i].person2 - 1][2] === 0) {
-            infections[shakes[i].person2 - 1][1] = k;
-            infections[shakes[i].person2 - 1][2] = 1;
+    const p1 = shakes[i].person1 - 1;
+    const p2 = shakes[i].person2 - 1;
+
+    const canP1Infect = infections[p1][1] === 1 && infections[p1][0] > 0;
+    const canP2Infect = infections[p2][1] === 1 && infections[p2][0] > 0;
+
+    if (canP1Infect) {
+        if (infections[p2][1] === 0) {
+            infections[p2][1] = 1;
+            infections[p2][0] = k;
         }
-        infections[shakes[i].person2 - 1][0] = 1;
-        infections[shakes[i].person1 - 1][1]--;
+        infections[p1][0]--;
     }
 
-    if (infections[shakes[i].person2 - 1][1] > 0) {
-        if (infections[shakes[i].person1 - 1][2] === 0) {
-            infections[shakes[i].person1 - 1][1] = k;
-            infections[shakes[i].person1 - 1][2] = 1;
+    if (canP2Infect) {
+        if (infections[p1][1] === 0) {
+            infections[p1][1] = 1;
+            infections[p1][0] = k;
         }
-        infections[shakes[i].person1 - 1][0] = 1;
-        infections[shakes[i].person2 - 1][1]--;
+        infections[p2][0]--;
     }
-
 }
 
 let answer = "";
 for (const v of infections) {
-    answer += v[2];
+    answer += v[1];
 }
 
 console.log(answer);
