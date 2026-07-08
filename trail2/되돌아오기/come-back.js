@@ -33,6 +33,7 @@ for (const move of moves) {
             break;
         }
     }
+    if (x === 0 && y === 0) break;
 }
 
 console.log(answer);
