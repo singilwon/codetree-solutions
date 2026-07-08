@@ -26,6 +26,6 @@ for (let i = 0; i < m; i++) {
             if (grid[x + dx[j]][y + dy[j]] === 1) colored++;
         }
     }
-    if (colored >= 3) console.log(1);
+    if (colored === 3) console.log(1);
     else console.log(0);
 }
