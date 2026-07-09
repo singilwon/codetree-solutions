@@ -12,7 +12,7 @@ let answer = 0;
 
 if (startNum > 3 * n) {
     dir = "R";
-    x = startNum - (3 * n) - 1, y = 0;
+    x = 4 * n - startNum;, y = 0;
 } else if (startNum > 2 * n) {
     dir = "U";
     x = n - 1, y = y = 3 * n - startNum;
