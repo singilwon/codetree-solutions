@@ -12,13 +12,13 @@ let answer = 0;
 
 if (startNum > 3 * n) {
     dir = "R";
-    x = startNum - 1, y = 0;
+    x = startNum - (3 * n) - 1, y = 0;
 } else if (startNum > 2 * n) {
     dir = "U";
-    x = n - 1, y = startNum - 1;
+    x = n - 1, y = startNum - (2 * n) - 1;
 } else if (startNum > n) {
     dir = "L";
-    x = startNum - 1, y = n - 1;
+    x = startNum - n - 1, y = n - 1;
 } else {
     dir = "D";
     x = 0, y = startNum - 1;
