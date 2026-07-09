@@ -15,7 +15,7 @@ if (startNum > 3 * n) {
     x = startNum - (3 * n) - 1, y = 0;
 } else if (startNum > 2 * n) {
     dir = "U";
-    x = n - 1, y = startNum - (2 * n) - 1;
+    x = n - 1, y = y = 3 * n - startNum;
 } else if (startNum > n) {
     dir = "L";
     x = startNum - n - 1, y = n - 1;
