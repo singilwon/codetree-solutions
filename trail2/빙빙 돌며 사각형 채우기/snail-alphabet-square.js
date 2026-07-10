@@ -24,7 +24,7 @@ for (let i = 1; i < n * m; i++) {
   x += dx[dirNum];
   y += dy[dirNum];
 
-  if (i + 65 >= 91) answer[x][y] = String.fromCharCode(i + 65 - 26);
+  if (i + 65 >= 91) answer[x][y] = String.fromCharCode((i - 65) % 26 + 65);
   else answer[x][y] = String.fromCharCode(i + 65);
 
 }
