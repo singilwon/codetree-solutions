@@ -3,7 +3,7 @@ const input = fs.readFileSync(0).toString().trim().split('\n');
 
 const a = input[0];
 
-let max = -Infinity;
+let max = 0;
 for (let i = 0; i < a.length; i++) {
     if (a[i] === "0") {
         const b = a.split("");
