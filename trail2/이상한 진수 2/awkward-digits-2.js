@@ -13,4 +13,8 @@ for (let i = 0; i < a.length; i++) {
     }
 }
 
+if (max === 0) {
+    max = parseInt(a, 2) - 1;
+}
+
 console.log(max);
