@@ -1,29 +1,40 @@
 const fs = require("fs");
-const input = fs.readFileSync(0).toString().trim().split('\n');
+const input = fs.readFileSync(0).toString().trim().split("\n");
 
 const n = Number(input[0]);
-const arr = input.slice(1, 1 + n).map(Number);
+const arr = input.slice(1, n + 1).map(Number);
 
-let max = -Infinity;
+function hasNoCarry(a, b, c) {
+    while (a > 0 || b > 0 || c > 0) {
+        const digitA = a % 10;
+        const digitB = b % 10;
+        const digitC = c % 10;
+
+        if (digitA + digitB + digitC >= 10) {
+            return false;
+        }
+
+        a = Math.floor(a / 10);
+        b = Math.floor(b / 10);
+        c = Math.floor(c / 10);
+    }
+
+    return true;
+}
+
+let answer = -1;
 
 for (let i = 0; i < n; i++) {
-    let first = String(arr[i]).split("").reverse();
-    for (let j = 0; j < n; j++) {
-        let twice = String(arr[j]).split("").reverse();
-        for (let k = 0; k < n; k++) {
-            let third = String(arr[k]).split("").reverse();
-            let isPossible = true;
-            let minN = 0;
-            let hap = 0;
-            if (i === j || i === k || j === k) continue;
-            arr[i] >= arr[j] ? arr[j] >= arr[k] ? minN = third.length : minN = twice.length : arr[i] >= arr[k] ? minN = third.length : minN = first.length;
-            for (let m = 0; m < minN; m++) {
-                if (Number(first[m]) + Number(twice[m]) + Number(third[m]) >= 10) isPossible = false;
+    for (let j = i + 1; j < n; j++) {
+        for (let k = j + 1; k < n; k++) {
+            if (hasNoCarry(arr[i], arr[j], arr[k])) {
+                answer = Math.max(
+                    answer,
+                    arr[i] + arr[j] + arr[k]
+                );
             }
-            if (isPossible) hap = arr[i] + arr[j] + arr[k];
-            max = Math.max(hap, max);
         }
     }
 }
 
-console.log(max);
+console.log(answer);
