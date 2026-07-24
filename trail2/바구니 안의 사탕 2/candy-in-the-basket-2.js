@@ -3,23 +3,26 @@ const input = fs.readFileSync(0).toString().trim().split("\n");
 
 const [n, k] = input[0].split(" ").map(Number);
 
-const bag = input.slice(1).map((line) => {
-  const [num1, num2] = line.split(" ").map(Number);
-
-  return [num1, num2];
+const bags = input.slice(1).map((line) => {
+  const [candy, position] = line.split(" ").map(Number);
+  return [position, candy];
 });
 
-bag.sort((a, b) => b[1] - a[1]);
-let max = -Infinity;
+bags.sort((a, b) => a[0] - b[0]);
 
-for (let i = k; i < bag[0][1] - k + 1; i++) {
-  let hap = 0;
-  for (let j = i - k; j < i + k + 1; j++) {
-    for (let k = 0; k < bag.length; k++) {
-      if (j === bag[k][1]) hap += bag[k][0];
-    }
+let left = 0;
+let sum = 0;
+let answer = 0;
+
+for (let right = 0; right < n; right++) {
+  sum += bags[right][1];
+
+  while (bags[right][0] - bags[left][0] > 2 * k) {
+    sum -= bags[left][1];
+    left++;
   }
-  max = Math.max(max, hap);
+
+  answer = Math.max(answer, sum);
 }
 
-console.log(max);
+console.log(answer);
