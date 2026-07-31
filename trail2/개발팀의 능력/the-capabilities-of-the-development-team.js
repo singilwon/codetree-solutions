@@ -28,4 +28,5 @@ for (let a = 0; a < 4; a++) {
     }
 }
 
-console.log(answer);
+if(answer===Infinity) console.log(-1)
+else console.log(answer)
