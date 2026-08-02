@@ -1,34 +1,34 @@
 const fs = require("fs");
-const input = fs.readFileSync(0).toString().trim().split('\n');
+const input = fs.readFileSync(0).toString().trim().split("\n");
+
 const n = Number(input[0]);
-const points = input.slice(1, 1 + n).map(line => line.split(' ').map(Number));
+const points = input
+    .slice(1, n + 1)
+    .map((line) => line.split(" ").map(Number));
 
-
-let answer = -Infinity;
+let answer = 0;
 
 for (let i = 0; i < n; i++) {
-    let startX = Infinity, endX = -Infinity;
-    let startY = Infinity, endY = -Infinity;
+    const [baseX, baseY] = points[i];
+
+    let maxWidth = 0;
+    let maxHeight = 0;
+
     for (let j = 0; j < n; j++) {
         if (i === j) continue;
 
         const [x, y] = points[j];
 
-        startX = Math.min(startX, x);
-        endX = Math.max(endX, x);
-        startY = Math.min(startY, y);
-        endY = Math.max(endY, y);
-    }
-    for (let k = 0; k < n; k++) {
-        const [x, y] = points[k];
-        if ((startY === y && endX === x) || (endY === y && startX === x)) {
-            const totalX = endX - startX;
-            const totalY = endY - startY;
-            answer = Math.max(answer, totalX * totalY);
+        if (y === baseY) {
+            maxWidth = Math.max(maxWidth, Math.abs(x - baseX));
         }
 
+        if (x === baseX) {
+            maxHeight = Math.max(maxHeight, Math.abs(y - baseY));
+        }
     }
 
+    answer = Math.max(answer, maxWidth * maxHeight);
 }
 
 console.log(answer);
