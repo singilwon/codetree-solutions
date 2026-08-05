@@ -6,7 +6,7 @@ const segments = input.slice(1, n + 1).map(line => line.split(' ').map(Number));
 
 
 function getMaxOverlappedCnt(i1, i2, i3) {
-    let count = Array(11).fill(0);
+    let count = Array(101).fill(0);
     for (let i = 0; i < n; i++) {
         if (i === i1 || i === i2 || i === i3) {
             continue;
