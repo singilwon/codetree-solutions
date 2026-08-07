@@ -15,33 +15,46 @@ for (let i = d + 1; i <= d + s; i++) {
     info2.push({ p, t });
 }
 
-const sickP = [];
+let answer = 0;
 
-for (let i = 0; i < info2.length; i++) {
-    sickP.push(info2[i].p);
-}
+for (let cheese = 1; cheese <= m; cheese++) {
+    let possible = true;
 
-const whatCheese = [];
+    for (let i = 0; i < info2.length; i++) {
+        const sickPerson = info2[i].p;
+        const sickTime = info2[i].t;
 
-for (let i = 0; i < sickP.length; i++) {
-    let target = sickP[i];
-    for (let j = 0; j < info1.length; j++) {
-        if (info1[j].p === target) {
-            if (whatCheese.includes(info1[j].cheese)) continue;
-            whatCheese.push(info1[j].cheese);
+        let ateBefore = false;
+
+        for (let j = 0; j < info1.length; j++) {
+            if (
+                info1[j].p === sickPerson &&
+                info1[j].cheese === cheese &&
+                info1[j].t < sickTime
+            ) {
+                ateBefore = true;
+                break;
+            }
+        }
+
+        if (!ateBefore) {
+            possible = false;
+            break;
         }
     }
-}
 
-const ans = [];
-for (let i = 0; i < whatCheese.length; i++) {
-    let target = whatCheese[i];
-    for (let j = 0; j < info1.length; j++) {
-        if (info1[j].cheese === target) {
-            if (ans.includes(info1[j].p)) continue;
-            ans.push(info1[j].p);
+    if (!possible) continue;
+
+    const people = [];
+
+    for (let i = 0; i < info1.length; i++) {
+        if (info1[i].cheese === cheese) {
+            if (people.includes(info1[i].p)) continue;
+            people.push(info1[i].p);
         }
     }
+
+    answer = Math.max(answer, people.length);
 }
 
-console.log(ans.length);
+console.log(answer);
