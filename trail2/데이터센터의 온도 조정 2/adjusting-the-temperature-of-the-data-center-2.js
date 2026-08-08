@@ -10,7 +10,7 @@ for (let i = 1; i <= n; i++) {
 }
 
 function getScore(num, ta, tb) {
-    if (num <= ta) {
+    if (num < ta) {
         return c;
     } else if (num <= tb) {
         return g;
@@ -22,7 +22,7 @@ function getScore(num, ta, tb) {
 let answer = -Infinity;
 let max = Math.max(...tb), min = Math.min(...ta);
 
-for (let i = min; i <= max; i++) {
+for (let i = min - 1; i <= max + 1; i++) {
     let score = 0;
     for (let j = 0; j < n; j++) {
         score += getScore(i, ta[j], tb[j]);
