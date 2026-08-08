@@ -12,7 +12,7 @@ for (let i = 1; i <= n; i++) {
 function getScore(num, ta, tb) {
     if (num < ta) {
         return c;
-    } else if (num < tb) {
+    } else if (num <= tb) {
         return g;
     } else {
         return h;
