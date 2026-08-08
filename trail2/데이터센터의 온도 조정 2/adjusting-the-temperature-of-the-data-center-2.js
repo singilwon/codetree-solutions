@@ -10,7 +10,7 @@ for (let i = 1; i <= n; i++) {
 }
 
 function getScore(num, ta, tb) {
-    if (num < ta) {
+    if (num <= ta) {
         return c;
     } else if (num <= tb) {
         return g;
