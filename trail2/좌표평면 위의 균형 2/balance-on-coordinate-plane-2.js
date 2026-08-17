@@ -12,8 +12,10 @@ let ans = Infinity;
 
 let xMax = Math.max(...x), xMin = Math.min(...x);
 let yMax = Math.max(...y), yMin = Math.min(...y);
+
+
 for (let i = xMin - 1; i <= xMax + 1; i += 2) {
-    for (let j = xMin - 1; j <= xMax + 1; j += 2) {
+    for (let j = yMin - 1; j <= yMax + 1; j += 2) {
         let one = 0, two = 0, three = 0, four = 0;
         for (let k = 0; k < n; k++) {
             if (points[k][0] < i && points[k][1] < j) three++;
