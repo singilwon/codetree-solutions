@@ -36,7 +36,7 @@ for (let i = 0; i < n; i++) {
             if (newSeat[plus] === "1" || newSeat[minus] === "1") break;
             cnt++;
         }
-        min = Math.max(min, cnt - 2);
+        min = Math.max(min, cnt - 1);
     }
     ans = Math.max(ans, min);
 }
