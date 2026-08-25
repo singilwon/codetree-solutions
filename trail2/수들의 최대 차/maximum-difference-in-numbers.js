@@ -9,9 +9,9 @@ let ans = 0;
 
 for (let i = 0; i < n; i++) {
 
-    let count = 0;
+    let count = 1;
 
-    for (let j = 0; j < n; j++) {
+    for (let j = i + 1; j < n; j++) {
         if (i === j) continue;
         if ((arr[j] - arr[i]) <= k) count++;
     }
