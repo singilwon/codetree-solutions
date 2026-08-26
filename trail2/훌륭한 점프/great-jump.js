@@ -21,12 +21,10 @@ function isPossible(maxNum) {
     return true;
 }
 
-let minAns = Infinity;
-for (let i = Math.max(...arr); i >= 1; i--) {
+for (let i = 1; i <= 100; i++) {
     if (isPossible(i)) {
-        minAns = Math.min(minAns, i);
+        console.log(i);
+        break;
     }
 }
 
-
-console.log(minAns);
