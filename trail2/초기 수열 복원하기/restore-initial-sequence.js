@@ -6,7 +6,7 @@ const sums = n >= 2 ? input[1].split(' ').map(Number) : [];
 
 
 
-for (let i = 1; i <= sums[0]; i++) {
+for (let i = 1; i <= n; i++) {
     const set = new Set();
     set.add(i);
     let isPossible = false;
