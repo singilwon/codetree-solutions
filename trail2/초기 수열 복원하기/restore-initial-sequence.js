@@ -7,17 +7,20 @@ const sums = n >= 2 ? input[1].split(' ').map(Number) : [];
 
 
 for (let i = 1; i <= n; i++) {
-    const set = new Set();
-    set.add(i);
-    let isPossible = false;
+    const arr = [i];
+    const set = new Set([i]);
+
+    let isPossible = true;
+
     for (let j = 0; j < n - 1; j++) {
-        const value = [...set][j];
-        let temp = sums[j] - value;
+        const temp = sums[j] - arr[j];
+        if (temp > n || temp < 1 || set.has(temp)) isPossible = false;
+        arr.push(temp);
         set.add(temp);
-        if (set.size === n) isPossible = true;
     }
+
     if (isPossible) {
-        console.log(...set)
+        console.log(...arr);
         break;
     }
 }
