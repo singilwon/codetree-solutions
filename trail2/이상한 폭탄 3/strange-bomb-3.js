@@ -12,16 +12,20 @@ for (let i = 1; i <= n; i++) {
 let ans = 0, max = -Infinity;
 
 
-for (let i = 1; i <= MAX_AI; i++) {
+for (let i = 1; i <= 5; i++) {
     const visited = Array(n).fill(0);
     let target = -1;
     for (let j = 0; j < n; j++) {
         if (nums[j] === i) {
-            if (target === -1) target = j;
+            if (target === -1) {
+                target = j;
+            }
             else {
                 if (visited[target] === 0) {
                     if (j - target <= k) {
                         visited[j] = 1, visited[target] = 1;
+                        target = j;
+                    } else {
                         target = j;
                     }
                 } else {
