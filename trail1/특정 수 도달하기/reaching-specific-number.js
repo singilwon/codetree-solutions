@@ -16,5 +16,5 @@ for (let i = 0; i < arr.length; i++) {
 if (index === -1) {
     console.log(ans, ans / 10)
 } else {
-    console.log(ans, ans / index);
+    console.log(ans, (ans / index).toFixed(1));
 }
