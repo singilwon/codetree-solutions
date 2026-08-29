@@ -19,19 +19,24 @@ for (let i = 1; i <= MAX_AI; i++) {
         if (nums[j] === i) {
             if (target === -1) target = j;
             else {
-                if (j - target <= k) {
-                    visited[j] = 1, visited[target] = 1;
+                if (visited[target] === 0) {
+                    if (j - target <= k) {
+                        visited[j] = 1, visited[target] = 1;
+                        target = j;
+                    }
+                } else {
                     target = j;
                 }
             }
         }
-        let bomb = 0;
-        for (const v of visited) if (v === 1) bomb++;
-        if (bomb > max) {
-            max = bomb;
-            ans = i;
-        }
     }
+    let bomb = 0;
+    for (const v of visited) if (v === 1) bomb++;
+    if (bomb > max) {
+        max = bomb;
+        ans = i;
+    }
+
 }
 
 console.log(ans);
