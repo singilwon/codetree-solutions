@@ -32,6 +32,7 @@ for (let i = 1; i <= MAX_AI; i++) {
     }
     let bomb = 0;
     for (const v of visited) if (v === 1) bomb++;
+    if (bomb === 0) continue;
     if (bomb > max) {
         max = bomb;
         ans = i;
