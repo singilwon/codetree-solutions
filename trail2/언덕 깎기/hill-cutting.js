@@ -14,20 +14,14 @@ let answer = Infinity;
 for (let low = 0; low < 84; low++) {
     const high = low + 17;
 
-    let cost = 0;
+    let lowCost = 0;
+    let highCost = 0;
 
     for (let i = 0; i < n; i++) {
-        if (hills[i] < low) {
-            const diff = low - hills[i];
-            cost += diff * diff;
-        }
-
-        if (hills[i] > high) {
-            const diff = hills[i] - high;
-            cost += diff * diff;
-        }
+        if (hills[i] < low) lowCost += (low - hills[i]) * (low - hills[i]);
+        if (hills[i] > high) highCost += (hills[i] - high) * (hills[i] - high);
     }
-    answer = Math.min(answer, cost);
+    answer = Math.min(answer, lowCost + highCost);
 }
 
 console.log(answer);
