@@ -12,7 +12,7 @@ for (let i = 1; i <= n; i++) {
 let ans = 0, max = -Infinity;
 
 
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= MAX_AI; i++) {
     const visited = Array(n).fill(0);
     let target = -1;
     for (let j = 0; j < n; j++) {
