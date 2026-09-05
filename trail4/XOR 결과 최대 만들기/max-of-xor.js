@@ -27,4 +27,6 @@ function choose(num) {
 
 choose(1);
 
-console.log(max);
+
+if (n === 1) console.log(0);
+else console.log(max);
