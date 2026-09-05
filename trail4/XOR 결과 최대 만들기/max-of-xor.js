@@ -18,15 +18,14 @@ function choose(num) {
         return;
     }
 
-    for (let i = num; i <= n; i++) {
-        arr.push(i);
+    for (let i = num; i < n; i++) {
+        arr.push(a[i]);
         choose(i + 1);
         arr.pop();
     }
 }
 
-choose(1);
+choose(0);
 
 
-if (n === 1) console.log(0);
-else console.log(max);
+console.log(max);
