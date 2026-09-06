@@ -13,8 +13,7 @@ const arr = [];
 function choose(num) {
     if (arr.length === n) {
         const sum = arr.reduce((acc, cur) => acc + cur, 0);
-        afterMinus = Math.abs(sum - (totalSum - sum))
-        answer = Math.min(afterMinus, answer, sum);
+        answer = Math.min(Math.abs(sum - (totalSum - sum)), answer);
         return;
     }
 
