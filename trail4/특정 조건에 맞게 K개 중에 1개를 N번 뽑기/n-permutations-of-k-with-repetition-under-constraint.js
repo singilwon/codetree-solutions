@@ -7,12 +7,26 @@ const arr = [];
 
 function choose() {
     if (arr.length === n) {
-        const selected = [];
         let possible = true;
-        for (const v of arr) {
-            selected[v] = (selected[v] || 0) + 1;
+        if (arr.length >= 3) {
+            let currentNum = arr[0];
+            let cnt = 1;
+            for (let i = 1; i < arr.length; i++) {
+                if (currentNum === arr[i]) {
+                    cnt++;
+                    if (cnt >= 3) {
+                        possible = false;
+                        break;
+                    }
+                } else {
+                    cnt = 1;
+                    currentNum = arr[i];
+                }
+            }
+        } else {
+            console.log(...arr);
+            possible = false;
         }
-        selected.forEach((v) => { if (v >= 3) possible = false });
         if (possible) console.log(...arr);
         return;
     }
