@@ -15,8 +15,9 @@ for (let i = 0; i < n; i++) {
     for (let j = 0; j < m; j++) {
 
         // 첫 번째 블록 확인
-        for (let k = 0; k < 4; k++) {
-            if (isPossible(i + 1, j) && isPossible(i + 1, j + 1) && isPossible(i, j + 1)) {
+        if (isPossible(i + 1, j) && isPossible(i + 1, j + 1) && isPossible(i, j + 1)) {
+            for (let k = 0; k < 4; k++) {
+
                 let temp = grid[i][j] + grid[i + 1][j] + grid[i][j + 1] + grid[i + 1][j + 1];
                 if (k === 0) temp -= grid[i][j];
                 else if (k === 1) temp -= grid[i + 1][j];
@@ -24,7 +25,7 @@ for (let i = 0; i < n; i++) {
                 else if (k === 3) temp -= grid[i + 1][j + 1];
 
                 ans = Math.max(ans, temp);
-            } else break;
+            }
         }
 
         //두 번째 블록 확인
@@ -35,14 +36,20 @@ for (let i = 0; i < n; i++) {
                 for (let l = 0; l < 3; l++) {
                     if (isPossible(i + l, j)) {
                         temp += grid[i + l][j]
-                    } else possible = false;
+                    } else {
+                        possible = false;
+                        break;
+                    }
                 }
             }
             else if (k === 1) {
                 for (let l = 0; l < 3; l++) {
                     if (isPossible(i, j + l)) {
                         temp += grid[i][j + l]
-                    } else possible = false;
+                    } else {
+                        possible = false;
+                        break;
+                    }
                 }
             }
             if (possible) ans = Math.max(ans, temp);
